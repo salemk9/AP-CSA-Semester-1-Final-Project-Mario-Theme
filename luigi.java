@@ -1,14 +1,28 @@
 import java.util.Random;
 
+/**
+ * Luigi class — models a virtual character with health, energy, happiness,
+ * and scaredness. Includes actions that modify these stats and trigger
+ * random world events.
+ * 
+ * Author: Sam Ho
+ * Collaborators: Copilot
+ */
 public class luigi {
+
+    // Instance variables representing Luigi's current status
     private String name;
     int health;
     int energy;
     int happiness;
     private int scaredLevel;
-    private Random rand = new Random(); // for random events
 
-    // constructor
+    // Random number generator for unpredictable events
+    private Random rand = new Random();
+
+    /**
+     * Constructor: initializes Luigi with default maximum stats.
+     */
     public luigi(String name) {
         this.name = name;
         this.health = 100;
@@ -17,11 +31,14 @@ public class luigi {
         this.scaredLevel = 10;
     }
 
-    // Random event helper: world events that may occur after actions
-    //  - Luigi meets Mario (happiness up)
-    //  - Luigi gets hit by a Goomba (health and happiness down)
+    /**
+     * randomEvent: Occasionally triggers after actions. 
+     * May boost or reduce stats (e.g., meeting Mario or being hit by a Goomba).
+     * Helps simulate a dynamic game world.
+     */
     private void randomEvent() {
         int roll = rand.nextInt(10);
+
         if (roll == 0) {
             System.out.println(this.name +  "ran into Mario and they shared a happy reunion!");
             this.happiness += 20;
@@ -35,7 +52,10 @@ public class luigi {
         clampStats();
     }
 
-    // Helper: clamp all stats to the 0-100 range
+    /**
+     * clampStats: Keeps all stats in the valid range 0–100.
+     * Prevents invalid values from affecting gameplay.
+     */
     private void clampStats() {
         if (this.health < 0) this.health = 0;
         if (this.health > 100) this.health = 100;
@@ -47,7 +67,9 @@ public class luigi {
         if (this.scaredLevel > 100) this.scaredLevel = 100;
     }
 
-    // getter methods
+    // ----------------------- Getter Methods -----------------------
+    // Provide access to private stats while maintaining encapsulation.
+
     public int getEnergy() {
         return this.energy;
     }
@@ -64,7 +86,54 @@ public class luigi {
         return this.happiness;
     }
 
-    // Behavior: findMushroom - increases health and prints status
+    // ----------------------- Action Methods -----------------------
+    // Each method models something Luigi can do in the game,
+    // modifying his stats and sometimes triggering random events.
+
+    /**
+     * feed: Eating a mushroom restores health and energy.
+     */
+    public void feed() {
+        System.out.println(name + " eats a Super Mushroom!");
+
+        this.health += 15;
+        this.energy += 5;
+
+        if (health > 100) this.health = 100;
+
+        randomEvent();
+    }
+
+    /**
+     * play: Increases happiness but reduces energy.
+     */
+    public void play() {
+        System.out.println(name + " jumps around happily!");
+
+        this.happiness += 10;
+        this.energy -= 15;
+
+        if (happiness > 100) this.happiness = 100;
+        if (energy < 0) this.energy = 0;
+
+        randomEvent();
+    }
+
+    /**
+     * rest: Recovers energy and may trigger a random event.
+     */
+    public void rest() {
+        System.out.println(name + " takes a nap in a warp pipe...");
+
+        this.energy += 25;
+        if (energy > 100) energy = 100;
+
+        randomEvent();
+    }
+
+    /**
+     * findMushroom: Increases health and prints a themed message.
+     */
     public void findMushroom() {
         this.health += 20;
         clampStats();
@@ -72,7 +141,10 @@ public class luigi {
         randomEvent();
     }
 
-    // Behavior: exploreMansion - increases scared level, decreases happiness and energy
+    /**
+     * exploreMansion: A spooky action that raises scared level
+     * and decreases both happiness and energy.
+     */
     public void exploreMansion() {
         this.scaredLevel += 15;
         this.happiness -= 10;
@@ -82,7 +154,10 @@ public class luigi {
         randomEvent();
     }
 
-    // Behavior: questionBlock - chance to get a mushroom or a Boo appears
+    /**
+     * questionBlock: Has a 50/50 chance of producing a mushroom
+     * or summoning a Boo. Small energy cost included.
+     */
     public void questionBlock() {
         System.out.println(this.name + " leaps up and slams the question block with a hopeful grin.");
         int event = rand.nextInt(2); // 0 = mushroom (good), 1 = Boo (bad)
@@ -95,12 +170,14 @@ public class luigi {
             this.happiness -= 25;
             System.out.println("A Boo pops out with a hollow 'ooo!' — " + this.name.toLowerCase() + " felt scared and unhappy.");
         }
-        // small energy cost
+
         this.energy -= 5;
         clampStats();
     }
 
-    // Behavior: sleep - decreases scared level and increases energy
+    /**
+     * sleep: Lowers scaredness and restores a large amount of energy.
+     */
     public void sleep() {
         this.scaredLevel -= 10;
         this.energy += 40;
@@ -109,7 +186,10 @@ public class luigi {
         randomEvent();
     }
 
-    // Behavior: attackBoo - Luuses his vacuum to suck a Boo, reducing scared level and energy
+    /**
+     * attackBoo: Luigi uses his vacuum to defeat a Boo.
+     * Lowers scaredness but consumes energy.
+     */
     public void attackBoo() {
         System.out.println(this.name + " whips out the vacuum and lets out a heroic 'Suuuuck!' to pull the Boo in.");
         this.scaredLevel -= 25;
@@ -119,7 +199,9 @@ public class luigi {
         randomEvent();
     }
 
-    // Reveal Luigi's current stats in a single line
+    /**
+     * showStats: Displays all current stats in a single readable line.
+     */
     public void showStats() {
         System.out.println(this.name + "'s stats — Health: " + this.health + 
         ", Energy: " + this.energy + ", Happiness: " + this.happiness + ", Scared Level: " + this.scaredLevel + ".");
