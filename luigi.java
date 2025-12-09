@@ -21,20 +21,18 @@ public class luigi {
     //  - Luigi meets Mario (happiness up)
     //  - Luigi gets hit by a Goomba (health and happiness down)
     private void randomEvent() {
-        int roll = rand.nextInt(100); // 0-99
-        // 30% chance that a random world event happens after an action
-        if (roll < 30) {
-            int which = rand.nextInt(2); // 0 = Mario, 1 = Goomba
-            if (which == 0) {
-                this.happiness += 20;
-                System.out.println(this.name + " ran into Mario and they shared a happy reunion!");
-            } else {
-                this.health -= 20;
-                this.happiness -= 15;
-                System.out.println("A Goomba sprang out and tripped " + this.name.toLowerCase() + ", leaving him ouch-y and glum.");
-            }
-            clampStats();
+        int roll = rand.nextInt(10);
+        if (roll == 0) {
+            System.out.println(this.name +  "ran into Mario and they shared a happy reunion!");
+            this.happiness += 20;
         }
+        else if (roll == 1){
+            System.out.println("A Goomba sprang out and tripped " + this.name + ", leaving him ouch-y and glum.");
+            this.health -= 20;
+            this.happiness -= 15;
+        }
+        
+        clampStats();
     }
 
     // Helper: clamp all stats to the 0-100 range
@@ -71,6 +69,7 @@ public class luigi {
         this.health += 20;
         clampStats();
         System.out.println(this.name + " plucks a glowing mushroom with a cheerful \"wa-hoo!\" and feels his health bounce up like a cartoon heart.");
+        randomEvent();
     }
 
     // Behavior: exploreMansion - increases scared level, decreases happiness and energy
@@ -80,12 +79,13 @@ public class luigi {
         this.energy -= 20;
         clampStats();
         System.out.println("Tiptoeing through the creaky mansion, " + this.name + " felt scared and unhappy.");
+        randomEvent();
     }
 
     // Behavior: questionBlock - chance to get a mushroom or a Boo appears
     public void questionBlock() {
         System.out.println(this.name + " leaps up and slams the question block with a hopeful grin.");
-        int event = randomEvent(); // 0 = mushroom (good), 1 = Boo (bad)
+        int event = rand.nextInt(2); // 0 = mushroom (good), 1 = Boo (bad)
         if (event == 0) {
             this.health += 15;
             System.out.println("A mushroom pops out with a comical 'boing!' — " + this.name + " feels a little more lively.");
@@ -106,6 +106,7 @@ public class luigi {
         this.energy += 40;
         clampStats();
         System.out.println(this.name + " curls up and drifts into a peaceful sleep, and " + this.name.toLowerCase() + " feels calmer.");
+        randomEvent();
     }
 
     // Behavior: attackBoo - Luuses his vacuum to suck a Boo, reducing scared level and energy
@@ -115,6 +116,7 @@ public class luigi {
         this.energy -= 20;
         clampStats();
         System.out.println(this.name + " sucked the Boo into the vacuum and felt braver but a little tired.");
+        randomEvent();
     }
 
     // Reveal Luigi's current stats in a single line
