@@ -122,4 +122,5 @@ public class luigi {
         System.out.println(this.name + "'s stats — Health: " + this.health + 
         ", Energy: " + this.energy + ", Happiness: " + this.happiness + ", Scared Level: " + this.scaredLevel + ".");
     }
+    // end of class
 }
