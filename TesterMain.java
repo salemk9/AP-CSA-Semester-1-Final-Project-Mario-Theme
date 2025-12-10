@@ -19,6 +19,10 @@ public class TesterMain {
         System.out.println("\nTesting releaseSteam() method:");
         wario.releaseSteam();
 
+        // Test the rest() method
+        System.out.println("\nTesting rest() method:");
+        wario.rest();
+
         // Test the setters and getters
         System.out.println("\nTesting setters and getters:");
         wario.setHealth(90);
