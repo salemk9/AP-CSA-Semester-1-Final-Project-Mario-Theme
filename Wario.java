@@ -83,6 +83,19 @@ public class Wario {
     }
 
     /**
+     * Wario takes a rest, recovering health and energy.
+     * Health increases by 20 (capped at 100).
+     * Energy increases by 30 (capped at 100).
+     * Mood becomes "Relaxed".
+     */
+    public void rest() {
+        this.health = Math.min(this.health + 20, 100); // Increase health by 20, cap at 100
+        this.energy = Math.min(this.energy + 30, 100); // Increase energy by 30, cap at 100
+        this.mood = "Relaxed"; // Update mood to "Relaxed"
+        System.out.println("Wario took a rest! Health: " + this.health + ", Energy: " + this.energy + ", Mood: " + this.mood);
+    }
+
+    /**
      * Triggers a random event after feeding.
      * This is a placeholder for additional functionality.
      */
