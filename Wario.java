@@ -1,7 +1,7 @@
 /**
  * Represents the character Wario with various attributes such as health, wealth, musk, size, mood, energy, and happiness.
  */
-public class Wario {
+public class Wario implements VirtualPet {
     
     private int health;
     private int wealth;

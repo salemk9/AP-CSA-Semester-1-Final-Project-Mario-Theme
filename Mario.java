@@ -9,7 +9,7 @@
 
 import java.util.Random;
 
-public class Mario {
+public class Mario implements VirtualPet {
 
     // -------------------------
     // Instance Variables

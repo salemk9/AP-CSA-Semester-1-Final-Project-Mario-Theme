@@ -9,7 +9,7 @@
 
 import java.util.Random;
 
-public class Bowser {
+public class Bowser implements VirtualPet {
 
     // -------------------------
     // Instance Variables
