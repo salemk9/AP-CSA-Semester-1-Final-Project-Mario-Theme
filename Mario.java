@@ -16,7 +16,7 @@ public class Mario {
     // -------------------------
 
     private String name;
-    int health;         //
+    int health;     
     int energy;
     int happiness;
     private int coins;
