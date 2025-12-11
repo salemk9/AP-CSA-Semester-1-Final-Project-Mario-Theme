@@ -176,17 +176,6 @@ public class luigi {
     }
 
     /**
-     * sleep: Lowers scaredness and restores a large amount of energy.
-     */
-    public void sleep() {
-        this.scaredLevel -= 10;
-        this.energy += 40;
-        clampStats();
-        System.out.println(this.name + " curls up and drifts into a peaceful sleep, and " + this.name.toLowerCase() + " feels calmer.");
-        randomEvent();
-    }
-
-    /**
      * attackBoo: Luigi uses his vacuum to defeat a Boo.
      * Lowers scaredness but consumes energy.
      */
