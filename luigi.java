@@ -8,7 +8,7 @@ import java.util.Random;
  * Author: Sam Ho
  * Collaborators: Copilot
  */
-public class luigi {
+public class luigi implements VirtualPet {
 
     // Instance variables representing Luigi's current status
     private String name;
