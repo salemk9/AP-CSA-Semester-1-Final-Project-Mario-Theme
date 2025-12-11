@@ -1,3 +1,5 @@
 public class Main{
-    System.out.println("testing main method");                   
+    public static void main(String[] args){
+        System.out.println("Testing main method");
+    }            
 }
