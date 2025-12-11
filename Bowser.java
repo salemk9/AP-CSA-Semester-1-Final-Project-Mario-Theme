@@ -229,26 +229,26 @@ public class Bowser {
     private void randomEvent() {
         int roll = rand.nextInt(12);
 
-        if (roll = 0) {
-                System.out.println("🔥 Bowser found a Fire Flower! His power surges.");
-                this.happiness += 10;
-                this.rageLevel -= 5;
+        if (roll == 0) {
+            System.out.println("🔥 Bowser found a Fire Flower! His power surges.");
+            this.happiness += 10;
+            this.rageLevel -= 5;
        }
 
-       if (roll = 1) {
-                System.out.println("💥 Bowser accidentally stepped on a Bob-omb!");
-                this.health -= 15;
+       else if (roll == 1) {
+            System.out.println("💥 Bowser accidentally stepped on a Bob-omb!");
+            this.health -= 15;
        }
 
-       if (roll = 2) {
-                System.out.println("👑 Bowser discovers a new kingdom to conquer!");
-                this.happiness += 15;
+       else if (roll == 2) {
+            System.out.println("👑 Bowser discovers a new kingdom to conquer!");
+            this.happiness += 15;
        }
 
-        if (roll = 3) {
-                System.out.println("⚔️ Mario ambushed Bowser!");
-                this.health -= 10;
-                this.rageLevel += 10;
+        else if (roll == 3) {
+            System.out.println("⚔️ Mario ambushed Bowser!");
+            this.health -= 10;
+            this.rageLevel += 10;
         }
         
 
