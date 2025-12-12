@@ -1,11 +1,11 @@
-public class TesterMain {
+public class WarioTester {
     public static void main(String[] args) {
         // Create a Wario object with initial attributes
         Wario wario = new Wario(80, 200, 30, "Medium", "Neutral", 50, 70, "Wario");
 
         // Display initial status
         System.out.println("Initial Status:");
-        wario.displayStatus();
+        wario.showStats();
 
         // Test the feed() method
         System.out.println("\nTesting feed() method:");
@@ -39,6 +39,6 @@ public class TesterMain {
 
         // Display final status
         System.out.println("\nFinal Status:");
-        wario.displayStatus();
+        wario.showStats();
     }
 }
