@@ -112,8 +112,8 @@ public class Wario implements VirtualPet {
      * His musk clears up and becomes "Clean", and his size becomes "Small".
      */
     public void releaseSteam() {
-        int healthLoss = (int) (this.health * 0.1); // Calculate 10% of current health
-        this.health = Math.max(this.health - healthLoss, 0); // Ensure health does not go below 0
+        int healthLoss = (int) (this.health - 10); // Substract 10 from current health
+        this.health = healthLoss; // Ensure health does not go below 0
         clampStats(); // Ensure stats are within valid bounds
         System.out.println("Wario released steam! Lost " + healthLoss + " health. Health is now: " + this.health + ". Musk: " + this.musk + ". Size: " + this.size + ". Mood: " + this.mood);
         this.size = "Small";
