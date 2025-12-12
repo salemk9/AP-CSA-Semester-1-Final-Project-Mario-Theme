@@ -221,12 +221,18 @@ public class Mario implements VirtualPet {
     private void clampStats() {
         if (health < 0) health = 0;
         if (health > 100) health = 100;
-
+    
         if (energy < 0) energy = 0;
         if (energy > 100) energy = 100;
-
+    
         if (happiness < 0) happiness = 0;
         if (happiness > 100) happiness = 100;
+    
+        // Check if Mario is dead
+        if (health == 0 || energy == 0) {
+            System.out.println("Mario has died!");
+            System.exit(0); // Exit the program
+        }
     }
 
     /**
