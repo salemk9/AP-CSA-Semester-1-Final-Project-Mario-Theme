@@ -32,6 +32,6 @@ public interface VirtualPet {
     /**
      * Shows the current stats of the pet (health, energy, happiness, or others).
      */
-    
+    void showStats();
 }
 
