@@ -204,6 +204,11 @@ public class Main {
                 } else {
                     System.out.println("Invalid option.");
                 }
+                // Check if the pet has died
+                if (pet.getEnergy() == 0 || pet.getHealth() == 0) {
+                    System.out.println("Your pet has died. Exiting program.");
+                    break; // Exit the loop and terminate the program
+                }
             }
         }
 

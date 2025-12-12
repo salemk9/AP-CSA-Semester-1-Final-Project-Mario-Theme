@@ -57,14 +57,20 @@ public class luigi implements VirtualPet {
      * Prevents invalid values from affecting gameplay.
      */
     private void clampStats() {
-        if (this.health < 0) this.health = 0;
-        if (this.health > 100) this.health = 100;
-        if (this.energy < 0) this.energy = 0;
-        if (this.energy > 100) this.energy = 100;
-        if (this.happiness < 0) this.happiness = 0;
-        if (this.happiness > 100) this.happiness = 100;
-        if (this.scaredLevel < 0) this.scaredLevel = 0;
-        if (this.scaredLevel > 100) this.scaredLevel = 100;
+        if (health < 0) health = 0;
+        if (health > 100) health = 100;
+    
+        if (energy < 0) energy = 0;
+        if (energy > 100) energy = 100;
+    
+        if (happiness < 0) happiness = 0;
+        if (happiness > 100) happiness = 100;
+    
+        // Check if Luigi is dead
+        if (health == 0 || energy == 0) {
+            System.out.println("Luigi has died!");
+            System.exit(0); // Exit the program
+        }
     }
 
     // ----------------------- Getter Methods -----------------------

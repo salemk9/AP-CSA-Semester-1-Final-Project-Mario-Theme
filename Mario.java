@@ -60,6 +60,12 @@ public class Mario implements VirtualPet {
     public static int getTotalCoinsCollected() {
         return totalCoinsCollected;
     }
+    public int getEnergy() {
+        return this.energy;
+    }
+    public int getHealth() {
+        return this.health;
+    }
 
     // -------------------------
     // Required Interface Methods

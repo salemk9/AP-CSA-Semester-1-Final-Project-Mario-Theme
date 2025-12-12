@@ -63,6 +63,7 @@ public class Wario implements VirtualPet {
         }
 
         randomEvent(); // Trigger a random event after feeding
+        clampStats(); // Ensure stats are within valid bounds
         System.out.println("Wario's Health: " + health + ", Energy: " + energy);
     }
 
@@ -78,7 +79,8 @@ public class Wario implements VirtualPet {
         if (this.energy < 0) {
             this.energy = 0;
         }
-
+        clampStats(); // Ensure stats are within valid bounds
+        System.out.println("Wario's Happiness: " + happiness + ", Energy: " + energy);
         System.out.println("Wario's Happiness: " + happiness + ", Energy: " + energy);
     }
 
@@ -90,7 +92,8 @@ public class Wario implements VirtualPet {
      */
     public void rest() {
         this.health = Math.min(this.health + 20, 100); // Increase health by 20, cap at 100
-        this.energy = Math.min(this.energy + 30, 100); // Increase energy by 30, cap at 100
+        clampStats(); // Ensure stats are within valid bounds
+        System.out.println("Wario took a rest! Health: " + this.health + ", Energy: " + this.energy + ", Mood: " + this.mood);
         this.mood = "Relaxed"; // Update mood to "Relaxed"
         System.out.println("Wario took a rest! Health: " + this.health + ", Energy: " + this.energy + ", Mood: " + this.mood);
     }
@@ -111,21 +114,25 @@ public class Wario implements VirtualPet {
     public void releaseSteam() {
         int healthLoss = (int) (this.health * 0.1); // Calculate 10% of current health
         this.health = Math.max(this.health - healthLoss, 0); // Ensure health does not go below 0
-        this.musk = 0; // Musk clears up
+        clampStats(); // Ensure stats are within valid bounds
+        System.out.println("Wario released steam! Lost " + healthLoss + " health. Health is now: " + this.health + ". Musk: " + this.musk + ". Size: " + this.size + ". Mood: " + this.mood);
         this.size = "Small";
         this.mood = "Clean";
         System.out.println("Wario released steam! Lost " + healthLoss + " health. Health is now: " + this.health + ". Musk: " + this.musk + ". Size: " + this.size + ". Mood: " + this.mood);
     }
 
     
-    // Getters and Setters
+    // Getters and SettersB
     /**
      * Gets the health of Wario.
      * 
      * @return the health of Wario
      */
     public int getHealth() {
-        return health;
+        return this.health;
+    }
+    public int getEnergy() {
+        return this.energy;
     }
 
     /**
@@ -207,6 +214,22 @@ public class Wario implements VirtualPet {
      */
     public void setMood(String mood) {
         this.mood = mood;
+    }
+    private void clampStats() {
+        if (health < 0) health = 0;
+        if (health > 100) health = 100;
+    
+        if (energy < 0) energy = 0;
+        if (energy > 100) energy = 100;
+    
+        if (happiness < 0) happiness = 0;
+        if (happiness > 100) happiness = 100;
+    
+        // Check if Wario is dead
+        if (health == 0 || energy == 0) {
+            System.out.println("Wario has died!");
+            System.exit(0); // Exit the program
+        }
     }
 }
 

@@ -55,6 +55,13 @@ public class Bowser implements VirtualPet {
     public static int getBowserCount() {
         return bowserCount;
     }
+    public int getEnergy() {
+        return this.energy;
+    }
+    public int getHealth() {
+        return this.health;
+    }
+    
 
     // -------------------------
     // Required Interface Methods
