@@ -184,7 +184,6 @@ public class Main {
                 System.out.println("3. Rest");
                 System.out.println("4. Show Stats");
                 System.out.println("5. Release Steam");
-                System.out.println("6. Display Status");
                 System.out.println("0. Quit");
                 System.out.print("Choose action: ");
 
@@ -200,8 +199,6 @@ public class Main {
                     pet.showStats();
                 } else if (action == 5) {
                     pet.releaseSteam();
-                } else if (action == 6) {
-                    pet.displayStatus();
                 } else if (action == 0) {
                     playing = false;
                 } else {
