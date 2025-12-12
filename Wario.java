@@ -36,9 +36,9 @@ public class Wario implements VirtualPet {
     }
 
     /**
-     * Displays the current status of Wario.
-     */
-    public void displayStatus() {
+    * Displays the current status of Wario.
+    */
+    public void showStats() {
         System.out.println("Wario's Health: " + health);
         System.out.println("Wario's Coins: " + wealth);
         System.out.println("Wario's Stinkiness: " + musk);
