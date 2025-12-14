@@ -1,5 +1,11 @@
 /**
- * Represents the character Wario with various attributes such as health, wealth, musk, size, mood, energy, and happiness.
+ * Wario class - a virtual pet based on the Wario character from the
+ * Super Mario Bros universe. Wario can eat mushrooms, collect coins,
+ * play, and perform other actions that affect his health, energy, and happiness.
+ *
+ * Implements the VirtualPet interface.
+ * Authors: Quan Nguyen
+ * Collaborators: Copilot
  */
 public class Wario implements VirtualPet {
     
