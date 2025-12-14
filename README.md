@@ -8,7 +8,7 @@ This Java project is a Super Mario Bros-themed virtual pet program that allows u
 
 How to run:
 
-When the program is first run, the user is prompted to choose from four characters: Mario, Luigi, Bowser, and Wario. After typing the number corresponding to the pet/character they choose, the user is shown all the behaviors and actions their pet can do. Then, the user types the nume=ber corresponding to the behavior they want their pet to perform, which affects the stats and attributes of their pet. The stats of the pet can benefit from these actions, but can also be harmed, which may lead to the pet's death and the end of the program. If the user ever desires, they can quit at any time.
+When the program begins, the user is prompted to choose one of four characters—Mario, Luigi, Bowser, or Wario—by entering the number that corresponds to their selection. After choosing a pet, the program displays all available behaviors and actions the character can perform. The user then selects an action, and the program updates the pet’s stats accordingly; these actions can improve or harm the pet’s well-being, and poor stat management may even lead to the pet’s death and the end of the program. At any point, the user also has the option to quit.
 
 
 ## Features
