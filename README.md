@@ -14,9 +14,10 @@ When the program begins, the user is prompted to choose one of four charactersâ€
 ## Features
 
 - Multiple pet character classes: `luigi`, `mario`, `wario`, `bowser`.
-- Choose a pet character and call behaviors to modify stats (health, energy, happiness, scared level).
-- Behaviors include finding mushrooms, exploring mansions, hitting question blocks, attacking Boos, and sleeping that are unique to the characters and match their personalities.
-- Stats are clamped between 0 and 100.
+- Choose a pet character and call behaviors to modify core stats. (health, energy, happiness)
+- Unique stats that match the character's personality (e.g Luigi's scared level, Bowser's rage level)
+- Behaviors include finding mushrooms, exploring mansions, kidnapping Peach, attacking Boos, and climbing the Flagpole that are unique to the characters.
+- Stats are clamped between 0 and 100 to ensure code stability.
 
 ## Team Roles
 
