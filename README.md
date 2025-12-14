@@ -21,11 +21,15 @@ When the program begins, the user is prompted to choose one of four charactersâ€
 
 ## Team Roles
 
--
+-Salem Kiar: Project Manager - Keeps track of deadlines, Coordinates sprints, Leads scrum meetings
+-Sam Ho: Programming Lead - Ensures code quality & consistency, Manages merge requests, Oversees logic and architecture
+-Quan Nguyen: Quality Assurance Tester - Tests features, Creates test cases (in the main method), Reports bugs and edge cases
+-Sam Ho: Technical Writer - Maintains README and documentation, Creates class diagram, Ensures Javadoc is complete and correct
 
 ## Known Bugs / Future Improvements
 
--
+- Certain classes (Luigi, Mario, Bowser) do not display the stats of the characters after every action. However, the Wario class displays the stats of the characters after every action. A future improvment would to provide a standard across all of our classes, that being either showing the stats of the characters for all our classes or not.
+- 
 
 ---
 
