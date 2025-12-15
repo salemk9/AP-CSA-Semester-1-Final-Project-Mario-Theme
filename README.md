@@ -21,6 +21,7 @@ When the program begins, the user is prompted to choose one of four charactersâ€
 
 ## Class Diagram
 
+<img width="1054" height="697" alt="image" src="https://github.com/user-attachments/assets/938b7bf5-ad1f-47e7-9a03-5c7104551707" />
 
 
 
