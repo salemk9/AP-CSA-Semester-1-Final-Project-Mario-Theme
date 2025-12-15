@@ -29,7 +29,7 @@ When the program begins, the user is prompted to choose one of four charactersâ€
 ## Known Bugs / Future Improvements
 
 - Currently, some character classes (Luigi, Mario, and Bowser) do not display updated stats after each action, while the Wario class does. A future improvement would be to standardize this behavior across all character classes, ensuring either all of them display updated stats consistently or none of them do.
-- The output of the main method prints out the menu of the behaviors too quickly after a behavior is chosen, preventing users from seeing what their chosen behavior did to their animal or what happened due to the behavior. A future improvment would be to create some delay when printing the information out so the user can first see what their chosen behavior did and then see the menu of behaviors a few seconds after.
+- The main method currently prints the behavior menu immediately after an action is selected, which can prevent users from seeing the results of their chosen behavior. A future improvement would be to add a short delay before redisplaying the menu, allowing users time to read the outcome of the action before continuing.
 
 ---
 
