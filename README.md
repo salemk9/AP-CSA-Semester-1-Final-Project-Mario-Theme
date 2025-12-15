@@ -19,6 +19,12 @@ When the program begins, the user is prompted to choose one of four charactersâ€
 - Behaviors include finding mushrooms, exploring mansions, kidnapping Peach, attacking Boos, and climbing the Flagpole that are unique to the characters.
 - Stats are clamped between 0 and 100 to ensure code stability.
 
+## Class Diagram
+
+
+
+
+
 ## Team Roles
 
 - Salem Kiar: Project Manager - Keeps track of deadlines, Coordinates sprints, Leads scrum meetings
