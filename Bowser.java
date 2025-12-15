@@ -134,7 +134,7 @@ public class Bowser implements VirtualPet {
      * Bowser breathes fire — a powerful attack that drains energy.
      */
     public void breatheFire() {
-        System.out.println(name + " breathes a massive stream of fire!");
+        System.out.println(name + " breathes a massive stream of fire! RAAAH!");
 
         this.energy -= 25;
         this.rageLevel += 10;
