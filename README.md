@@ -22,6 +22,60 @@ When the program begins, the user is prompted to choose one of four charactersâ€
 ## Class Diagram
 
 
+                   <<interface>>
+                   VirtualPet
+      +----------------------------------+
+      | + feed() : void                  |
+      | + play() : void                  |
+      | + rest() : void                  |
+      | + showStats() : void             |
+      +----------------------------------+
+                ^         ^        ^        ^
+                |         |        |        |
+                |         |        |        |
+             implements implements implements implements
+                |         |        |        |
++----------------+   +---------------+  +--------------+   +--------------+
+|     Bowser     |   |     Mario     |  |    Luigi     |   |    Wario     |
++----------------+   +---------------+  +--------------+   +--------------+
+| - name:String  |   | - name:String |  | - name:String|   | - health:int |
+| - health:int   |   | - health:int  |  | - health:int |   | - wealth:int |
+| - energy:int   |   | - energy:int  |  | - energy:int |   | - musk:int   |
+| - happiness:int|   | - happiness:int| | - happiness:int| | - size:String|
+| - rageLevel:int|   | - coins:int   |  | - scaredLvl:int| | - mood:String|
+| - rand:Random  |   | - rand:Random |  | - rand:Random |  | - energy:int |
+| - bowserCount:int | | - totalCoinsCollected:int (static)| | - happiness:int|
++----------------+   +---------------+  +--------------+   | - name:String |
+| + Bowser(name) |   | + Mario(name) |  | + Luigi(name)|   +--------------+
+| + feed()       |   | + feed()      |  | + feed()     |   | + feed()     |
+| + play()       |   | + play()      |  | + play()     |   | + play()     |
+| + rest()       |   | + rest()      |  | + rest()     |   | + rest()     |
+| + showStats()  |   | + showStats() |  | + showStats()|   | + showStats()|
+| + breatheFire()|   | + gainCoin()  |  | + findMushroom()| | + releaseSteam() |
+| + roar()       |   | + climbFlagpole()| | + exploreMansion() | + get/set methods |
+| + throwHammers()| | + enterPipe()  |  | + questionBlock()|  +--------------+
+| + retreatShell()| | + attackGoomba()| | + attackBoo() |
+| + kidnapPeach()|  +---------------+  +--------------+
+| - clampStats() |   | - clampStats()|  | - clampStats()|
+| - randomEvent()|   | - randomEvent()| | - randomEvent()|
++----------------+   +---------------+  +--------------+
+
+                       +-----------+
+                       |   Main    |
+                       +-----------+
+                       | + main()  |
+                       +-----------+
+                      /     |      \
+                     /      |       \
+                    v       v        v
+                 uses     uses     uses  
+              Bowser    Mario     Luigi
+                     \
+                      \
+                       v
+                      uses
+                     Wario
+
 
 
 
