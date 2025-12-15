@@ -76,18 +76,38 @@ public class luigi implements VirtualPet {
     // ----------------------- Getter Methods -----------------------
     // Provide access to private stats while maintaining encapsulation.
 
+    /**
+     * getEnergy: Returns Luigi's current energy.
+     * 
+     * @return current energy value
+     */
     public int getEnergy() {
         return this.energy;
     }
 
+    /**
+     * getScaredLevel: Returns Luigi's current scared level.
+     * 
+     * @return current scared level value
+     */
     public int getScaredLevel() {
         return this.scaredLevel;
     }
 
+    /**
+     * getHealth: Returns Luigi's current health.
+     * 
+     * @return current health value
+     */
     public int getHealth() {
         return this.health;
     }
 
+    /**
+     * getHappiness: Returns Luigi's current happiness.
+     * 
+     * @return current happiness value
+     */
     public int getHappiness() {
         return this.happiness;
     }

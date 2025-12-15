@@ -5,6 +5,8 @@
  * his health, energy, and happiness.
  *
  * Implements the VirtualPet interface.
+ * Authors: Salem Kiar
+ * Collaborators: Copilot
  */
 
 import java.util.Random;
@@ -50,6 +52,9 @@ public class Mario implements VirtualPet {
     // Getters
     // -------------------------
 
+    /**
+     * @return The name of this Mario instance.
+     */
     public String getName() {
         return this.name;
     }
@@ -60,9 +65,17 @@ public class Mario implements VirtualPet {
     public static int getTotalCoinsCollected() {
         return totalCoinsCollected;
     }
+    
+    /**
+     * @return The current energy level of Mario.
+     */
     public int getEnergy() {
         return this.energy;
     }
+
+    /**
+     * @return The current health level of Mario.
+     */
     public int getHealth() {
         return this.health;
     }

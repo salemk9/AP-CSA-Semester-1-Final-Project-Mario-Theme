@@ -5,6 +5,8 @@
  * that impacts his health, energy, and happiness.
  *
  * Implements the VirtualPet interface.
+ * Authors: Salem Kiar
+ * Collaborators: Copilot
  */
 
 import java.util.Random;
@@ -48,16 +50,29 @@ public class Bowser implements VirtualPet {
     // Getters
     // -------------------------
 
+    /**
+     * @return The name of this Bowser instance.
+     */
     public String getName() {
         return this.name;
     }
-
+    /**
+     * @return total number of Bowser instances created
+     */
     public static int getBowserCount() {
         return bowserCount;
     }
+    
+    /**
+     * @return The current energy level of Bowser.
+     */
     public int getEnergy() {
         return this.energy;
     }
+
+    /**
+     * @return The current health level of Bowser.
+     */
     public int getHealth() {
         return this.health;
     }
