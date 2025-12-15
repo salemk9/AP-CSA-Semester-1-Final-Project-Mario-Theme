@@ -28,7 +28,7 @@ When the program begins, the user is prompted to choose one of four charactersâ€
 
 ## Known Bugs / Future Improvements
 
-- Certain classes (Luigi, Mario, Bowser) do not display the stats of the characters after every action. However, the Wario class displays the stats of the characters after every action. A future improvment would to provide a standard across all of our classes, that being either showing the stats of the characters for all our classes or not.
+- Currently, some character classes (Luigi, Mario, and Bowser) do not display updated stats after each action, while the Wario class does. A future improvement would be to standardize this behavior across all character classes, ensuring either all of them display updated stats consistently or none of them do.
 - 
 
 ---
